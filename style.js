@@ -1,3 +1,112 @@
+// bg 
+const group = document.querySelector('.group');
+for(let i = 1; i < 60; i++){
+    const containerId = `iconContainer ${i}`;
+    const container = document.createElement('div');
+    container.className = 'iconContainer';
+    container.id = containerId;
+    group.appendChild(container);
+    addIcons(containerId);
+
+}
+function addIcons(containerId){
+    const iconContainer = document.getElementById(containerId);
+    const Unicode = [
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+        'X',
+        'O',
+    ];
+    for (let i = 0; i < 100; i++){
+        const icon = document.createElement('i');
+        icon.className = 'icon fas';
+        icon.innerHTML = randomIcon(Unicode);
+        iconContainer.appendChild(icon);
+    }
+}
+
+function randomIcon(values){
+    const randomIndex = Math.floor(Math.random() * values.length);
+    return values[randomIndex];
+}
+
+
+
+
 let boxes = document.querySelectorAll(".box");
 let resetbtn = document.querySelector('#reset');
 let newgamebtn = document.querySelector('#new-btn');
@@ -50,7 +159,7 @@ const enableboxes = () =>  {
 
 
 const showWinner = (Winner) => {
-  msg.innerText =`Congratulation,  Winner is  ${Winner}` ;
+  msg.innerText =`Congratulation,  Winner is  (${Winner})` ;
   msgcontainer.classList.remove ('hide');
   disableboxes();
 }
